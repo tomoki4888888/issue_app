@@ -1,14 +1,6 @@
-default: &default
-  # adapter: sqlite3 を削除
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
-
-development:
-  <<: *default
-  adapter: sqlite3 # 追加
-  database: db/development.sqlite3
-
 production:
+#半角スペース２個分の空白を開ける
   <<: *default
   adapter: postgresql
-  database: db/production.pg
+  encoding: unicode
+  pool: 5
