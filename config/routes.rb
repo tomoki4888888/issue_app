@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
     
+  resources :comments
   resources :titles
   root 'static_pages#home'
   
