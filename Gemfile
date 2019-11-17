@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby "2.6.3"
+
 gem 'rails',        '5.1.6'
 gem 'mysql2', '0.3.18'
 gem 'bootstrap-sass', '3.3.7'
@@ -33,6 +35,7 @@ end
 
 group :production do
   gem 'pg', '0.20.0'
+  
 end
 
 # Windows環境ではtzinfo-dataというgemを含める必要があります
