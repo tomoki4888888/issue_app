@@ -5,16 +5,21 @@ class TitlesController < ApplicationController
   # GET /titles.json
   def index
     @titles = Title.all
+    @comments = Comment.all
+    
   end
+  
 
   # GET /titles/1
   # GET /titles/1.json
   def show
+    @comment = Comment.new
   end
 
   # GET /titles/new
   def new
     @title = Title.new
+    @comment = Comment.new
   end
 
   # GET /titles/1/edit

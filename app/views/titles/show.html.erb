@@ -1,9 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @title.name %>
-</p>
+<% @comments = Comment.all.where(Tname:@title.name) %>
 
-<%= link_to 'Edit', edit_title_path(@title) %> |
+<table>
+  <thead>
+    <tr>
+      <th>スレッド名 : <%= @title.name %></th>
+      
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <% @comments.each do |comment| %>
+        <tr>
+          <td><%= comment.come %></td>
+          <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
+          <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <p><p>
+        </tr>
+      <% end %>
+      
+    
+  </tbody>
+</table>
+
+<%= link_to 'コメントする', new_comment_path %> 
+<br>
 <%= link_to 'Back', titles_path %>

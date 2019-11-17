@@ -1,4 +1,5 @@
 <%= form_with(model: comment, local: true) do |form| %>
+
   <% if comment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
@@ -12,14 +13,16 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :come %>
+    <%= form.label :ここに入力 %>
     <%= form.text_area :come, id: :comment_come %>
   </div>
 
   <div class="field">
-    <%= form.label :Tname %>
+    <%= form.label :スレッド名 %>
     <%= form.text_field :Tname, id: :comment_Tname %>
   </div>
+  
+  
 
   <div class="actions">
     <%= form.submit %>

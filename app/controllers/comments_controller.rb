@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
+    @titles = Title.all
     @comments = Comment.all
   end
 
@@ -14,6 +15,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
+    @titles = Title.all
     @comment = Comment.new
   end
 

@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Titles</h1>
+<h1>スレッド一覧</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>スレッド名</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,10 +13,9 @@
   <tbody>
     <% @titles.each do |title| %>
       <tr>
-        <td><%= title.name %></td>
-        <td><%= link_to 'Show', title %></td>
-        <td><%= link_to 'Edit', edit_title_path(title) %></td>
-        <td><%= link_to 'Destroy', title, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to title.name, title %></td>
+        <td><%= link_to '編集', edit_title_path(title) %></td>
+        <td><%= link_to '消去', title, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +23,4 @@
 
 <br>
 
-<%= link_to 'New Title', new_title_path %>
+<%= link_to '新しくスレッドを作成する', new_title_path %>
